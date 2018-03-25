@@ -1,15 +1,15 @@
 <?php
 
-namespace Ekyna\Bundle\PayumCybermutBundle\DependencyInjection;
+namespace Ekyna\Bundle\PayumMoneticoBundle\DependencyInjection;
 
-use Ekyna\Component\Payum\Cybermut\Api\Api;
+use Ekyna\Component\Payum\Monetico\Api\Api;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Config\Definition\Processor;
 
 /**
  * Class ConfigurationTest
- * @package Ekyna\Bundle\PayumCybermutBundle
+ * @package Ekyna\Bundle\PayumMoneticoBundle
  * @author  Etienne Dauvergne <contact@ekyna.com>
  */
 class ConfigurationTest extends TestCase
@@ -44,7 +44,7 @@ class ConfigurationTest extends TestCase
     public function testValidApiConfig(array $config)
     {
         $this->processor->processConfiguration($this->configuration, [
-            'ekyna_payum_cybermut' => [
+            'ekyna_payum_monetico' => [
                 'api' => $config,
             ],
         ]);
@@ -60,7 +60,7 @@ class ConfigurationTest extends TestCase
         $this->expectException(Exception::class);
 
         $this->processor->processConfiguration($this->configuration, [
-            'ekyna_payum_cybermut' => [
+            'ekyna_payum_monetico' => [
                 'api' => $config,
             ],
         ]);
@@ -90,7 +90,7 @@ class ConfigurationTest extends TestCase
                 'mode'    => Api::MODE_PRODUCTION,
                 'tpe'     => '1234567890',
                 'key'     => 'abc_def_ghi',
-                'company' => 'Cybermut',
+                'company' => 'Monetico',
             ]],
         ];
     }

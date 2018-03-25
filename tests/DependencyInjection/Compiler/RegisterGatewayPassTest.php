@@ -1,8 +1,8 @@
 <?php
 
-namespace Ekyna\Bundle\PayumCybermutBundle\DependencyInjection\Compiler;
+namespace Ekyna\Bundle\PayumMoneticoBundle\DependencyInjection\Compiler;
 
-use Ekyna\Component\Payum\Cybermut\CybermutGatewayFactory;
+use Ekyna\Component\Payum\Monetico\MoneticoGatewayFactory;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
@@ -41,12 +41,12 @@ class RegisterGatewayPassTest extends TestCase
         $definition
             ->expects($this->at(0))
             ->method('addMethodCall')
-            ->with('addGatewayFactoryConfig', ['cybermut', ['payum.api_config' => new Parameter('ekyna_payum_cybermut.api_config')]]);
+            ->with('addGatewayFactoryConfig', ['monetico', ['payum.api_config' => new Parameter('ekyna_payum_monetico.api_config')]]);
 
         $definition
             ->expects($this->at(1))
             ->method('addMethodCall')
-            ->with('addGatewayFactory', ['cybermut', [CybermutGatewayFactory::class, 'build']]);
+            ->with('addGatewayFactory', ['monetico', [MoneticoGatewayFactory::class, 'build']]);
 
         $pass = new RegisterGatewayPass();
         $pass->process($container);

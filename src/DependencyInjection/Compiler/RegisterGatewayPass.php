@@ -1,15 +1,15 @@
 <?php
 
-namespace Ekyna\Bundle\PayumCybermutBundle\DependencyInjection\Compiler;
+namespace Ekyna\Bundle\PayumMoneticoBundle\DependencyInjection\Compiler;
 
-use Ekyna\Component\Payum\Cybermut\CybermutGatewayFactory;
+use Ekyna\Component\Payum\Monetico\MoneticoGatewayFactory;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Parameter;
 
 /**
  * Class RegisterGatewayPass
- * @package Ekyna\Bundle\PayumCybermutBundle
+ * @package Ekyna\Bundle\PayumMoneticoBundle
  * @author  Etienne Dauvergne <contact@ekyna.com>
  */
 class RegisterGatewayPass implements CompilerPassInterface
@@ -24,12 +24,12 @@ class RegisterGatewayPass implements CompilerPassInterface
         }
 
         $defaultConfig = [
-            'payum.api_config' => new Parameter('ekyna_payum_cybermut.api_config'),
+            'payum.api_config' => new Parameter('ekyna_payum_monetico.api_config'),
         ];
 
         $payumBuilder = $container->getDefinition('payum.builder');
-        $payumBuilder->addMethodCall('addGatewayFactoryConfig', ['cybermut', $defaultConfig]);
-        $payumBuilder->addMethodCall('addGatewayFactory', ['cybermut', [CybermutGatewayFactory::class, 'build']]);
+        $payumBuilder->addMethodCall('addGatewayFactoryConfig', ['monetico', $defaultConfig]);
+        $payumBuilder->addMethodCall('addGatewayFactory', ['monetico', [MoneticoGatewayFactory::class, 'build']]);
     }
 }
 

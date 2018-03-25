@@ -1,15 +1,15 @@
 <?php
 
-namespace Ekyna\Bundle\PayumCybermutBundle\DependencyInjection;
+namespace Ekyna\Bundle\PayumMoneticoBundle\DependencyInjection;
 
-use Ekyna\Component\Payum\Cybermut\Api\Api;
+use Ekyna\Component\Payum\Monetico\Api\Api;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
  * Class Configuration
- * @package Ekyna\Bundle\PayumCybermutBundle
+ * @package Ekyna\Bundle\PayumMoneticoBundle
  * @author  Etienne Dauvergne <contact@ekyna.com>
  */
 class Configuration implements ConfigurationInterface
@@ -20,7 +20,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $root = $treeBuilder->root('ekyna_payum_cybermut');
+        $root = $treeBuilder->root('ekyna_payum_monetico');
 
         $this->addApiSection($root);
 

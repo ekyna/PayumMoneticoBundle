@@ -1,16 +1,16 @@
 <?php
 
-namespace Ekyna\Bundle\PayumCybermutBundle\DependencyInjection;
+namespace Ekyna\Bundle\PayumMoneticoBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 /**
- * Class EkynaPayumCybermutExtension
- * @package Ekyna\Bundle\PayumCybermutBundle
+ * Class EkynaPayumMoneticoExtension
+ * @package Ekyna\Bundle\PayumMoneticoBundle
  * @author  Etienne Dauvergne <contact@ekyna.com>
  */
-class EkynaPayumCybermutExtension extends Extension
+class EkynaPayumMoneticoExtension extends Extension
 {
     /**
      * @inheritdoc
@@ -21,6 +21,6 @@ class EkynaPayumCybermutExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         // Api Config
-        $container->setParameter('ekyna_payum_cybermut.api_config', $config['api']);
+        $container->setParameter('ekyna_payum_monetico.api_config', $config['api']);
     }
 }

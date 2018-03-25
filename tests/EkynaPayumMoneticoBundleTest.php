@@ -1,17 +1,17 @@
 <?php
 
-namespace Ekyna\Bundle\PayumCybermutBundle;
+namespace Ekyna\Bundle\PayumMoneticoBundle;
 
-use Ekyna\Bundle\PayumCybermutBundle\DependencyInjection\Compiler\RegisterGatewayPass;
+use Ekyna\Bundle\PayumMoneticoBundle\DependencyInjection\Compiler\RegisterGatewayPass;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
- * Class EkynaPayumCybermutBundleTest
- * @package Ekyna\Bundle\PayumCybermutBundle
+ * Class EkynaPayumMoneticoBundleTest
+ * @package Ekyna\Bundle\PayumMoneticoBundle
  * @author  Etienne Dauvergne <contact@ekyna.com>
  */
-class EkynaPayumCybermutBundleTest extends TestCase
+class EkynaPayumMoneticoBundleTest extends TestCase
 {
     public function testRegisterGatewayPassToContainerBuilder()
     {
@@ -25,7 +25,7 @@ class EkynaPayumCybermutBundleTest extends TestCase
             ->method('addCompilerPass')
             ->with($this->isInstanceOf(RegisterGatewayPass::class));
 
-        $bundle = new EkynaPayumCybermutBundle();
+        $bundle = new EkynaPayumMoneticoBundle();
         $bundle->build($container);
     }
 }
