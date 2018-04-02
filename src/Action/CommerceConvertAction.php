@@ -37,12 +37,19 @@ class CommerceConvertAction implements ActionInterface, GatewayAwareInterface
 
         if (false == $model['amount']) {
             $this->gateway->execute($currency = new GetCurrency($payment->getCurrency()->getCode()));
-            if (3 < $currency->exp) {
-                throw new RuntimeException('Unexpected currency exp.');
+
+            $amount = (string)round($payment->getAmount(), $currency->exp);
+
+            if (0 < $currency->exp) {
+                if (false !== $pos = strpos($amount, '.')) {
+                    $amount = str_pad($amount, $pos + 1 + $currency->exp, '0', STR_PAD_RIGHT);
+                } else {
+                    $amount .= '.' . str_pad('0', $currency->exp, '0', STR_PAD_RIGHT);
+                }
             }
 
             $model['currency'] = (string)$currency->alpha3;
-            $model['amount'] = (string)round($payment->getAmount(), $currency->exp);
+            $model['amount'] = $amount;
         }
 
         $sale = $payment->getSale();
