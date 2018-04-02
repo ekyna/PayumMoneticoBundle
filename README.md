@@ -1,6 +1,6 @@
 # ekyna/PayumMoneticoBundle
 
-Payum Bundle for Monetico (Credit Mutuel/CIC/OBC) payment gateway.
+Payum Bundle for Monetico (Credit Mutuel/CIC) payment gateway.
 
 [![Build Status](https://travis-ci.org/ekyna/PayumMoneticoBundle.svg?branch=master)](https://travis-ci.org/ekyna/PayumMoneticoBundle)
 

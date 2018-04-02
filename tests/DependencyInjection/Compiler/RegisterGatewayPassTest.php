@@ -41,7 +41,7 @@ class RegisterGatewayPassTest extends TestCase
         $definition
             ->expects($this->at(0))
             ->method('addMethodCall')
-            ->with('addGatewayFactoryConfig', ['monetico', ['payum.api_config' => new Parameter('ekyna_payum_monetico.api_config')]]);
+            ->with('addGatewayFactoryConfig', ['monetico', new Parameter('ekyna_payum_monetico.api_config')]);
 
         $definition
             ->expects($this->at(1))
