@@ -6,7 +6,6 @@ use Ekyna\Component\Commerce\Payment\Model\PaymentInterface;
 use Payum\Core\Action\ActionInterface;
 use Payum\Core\Bridge\Spl\ArrayObject;
 use Payum\Core\Exception\RequestNotSupportedException;
-use Payum\Core\Exception\RuntimeException;
 use Payum\Core\GatewayAwareInterface;
 use Payum\Core\GatewayAwareTrait;
 use Payum\Core\Request\Convert;
@@ -40,12 +39,12 @@ class CommerceConvertAction implements ActionInterface, GatewayAwareInterface
 
             $amount = (string)round($payment->getAmount(), $currency->exp);
 
-            if (0 < $currency->exp) {
-                if (false !== $pos = strpos($amount, '.')) {
-                    $amount = str_pad($amount, $pos + 1 + $currency->exp, '0', STR_PAD_RIGHT);
-                } else {
-                    $amount .= '.' . str_pad('0', $currency->exp, '0', STR_PAD_RIGHT);
-                }
+            if (0 < $currency->exp && false !== $pos = strpos($amount, '.')) {
+                $amount = str_pad($amount, $pos + 1 + $currency->exp, '0', STR_PAD_RIGHT);
+            }
+
+            if (substr($amount, strrpos($amount, '.')) == 0) {
+                $amount = (string)round($amount);
             }
 
             $model['currency'] = (string)$currency->alpha3;
