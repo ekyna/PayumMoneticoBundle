@@ -22,8 +22,8 @@
     "require" : {
         "php" : ">=7.0",
         "symfony/framework-bundle" : "~3.0",
-        "payum/payum-bundle": "^2.1.1",
-        "ekyna/payum-monetico": "1.3.x-dev"
+        "payum/payum-bundle": "^2.3.0",
+        "ekyna/payum-monetico": "1.5.x-dev"
     },
     "require-dev": {
         "php-http/guzzle6-adapter": "^1.1",
