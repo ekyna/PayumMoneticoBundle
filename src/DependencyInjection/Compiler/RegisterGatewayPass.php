@@ -49,7 +49,7 @@ class RegisterGatewayPass implements CompilerPassInterface
     private function registerActions(ContainerBuilder $container)
     {
         // Only for EkynaCommerceBundle
-        if (!$container->hasDefinition('ekyna_commerce.checkout.payment_manager')) {
+        if (!$container->hasDefinition('ekyna_commerce.payment.checkout_manager')) {
             return;
         }
 
