@@ -2,7 +2,9 @@
 
 namespace Ekyna\Bundle\PayumMoneticoBundle\DependencyInjection\Compiler;
 
-use Ekyna\Bundle\PayumMoneticoBundle\Action\CommerceConvertAction;
+use Ekyna\Bundle\PayumMoneticoBundle\Bridge\Commerce\Action\CancelAction;
+use Ekyna\Bundle\PayumMoneticoBundle\Bridge\Commerce\Action\ConvertAction;
+use Ekyna\Bundle\PayumMoneticoBundle\Bridge\Commerce\Action\RefundAction;
 use Ekyna\Component\Payum\Monetico\MoneticoGatewayFactory;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -54,9 +56,19 @@ class RegisterGatewayPass implements CompilerPassInterface
         }
 
         // Commerce convert payment action
-        $definition = new Definition(CommerceConvertAction::class);
+        $definition = new Definition(ConvertAction::class);
         $definition->addTag('payum.action', ['factory' => 'monetico', 'prepend' => true]);
         $container->setDefinition('ekyna_commerce.payum.action.monetico.convert_payment', $definition);
+
+        // Commerce cancel payment action
+        $definition = new Definition(CancelAction::class);
+        $definition->addTag('payum.action', ['factory' => 'monetico']);
+        $container->setDefinition('ekyna_commerce.payum.action.monetico.cancel', $definition);
+
+        // Commerce refund payment action
+        $definition = new Definition(RefundAction::class);
+        $definition->addTag('payum.action', ['factory' => 'monetico']);
+        $container->setDefinition('ekyna_commerce.payum.action.monetico.refund', $definition);
     }
 }
 

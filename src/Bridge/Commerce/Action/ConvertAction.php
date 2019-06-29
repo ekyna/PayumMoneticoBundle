@@ -1,6 +1,6 @@
 <?php
 
-namespace Ekyna\Bundle\PayumMoneticoBundle\Action;
+namespace Ekyna\Bundle\PayumMoneticoBundle\Bridge\Commerce\Action;
 
 use Ekyna\Component\Commerce\Payment\Model\PaymentInterface;
 use Payum\Core\Action\ActionInterface;
@@ -16,7 +16,7 @@ use Payum\Core\Request\GetCurrency;
  * @package Ekyna\Bundle\PayumMoneticoBundle
  * @author  Etienne Dauvergne <contact@ekyna.com>
  */
-class CommerceConvertAction implements ActionInterface, GatewayAwareInterface
+class ConvertAction implements ActionInterface, GatewayAwareInterface
 {
     use GatewayAwareTrait;
 
