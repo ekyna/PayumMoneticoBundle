@@ -8,5 +8,5 @@ This bundle facilitates the integration of [ekyna/payum-monetico](https://github
 
 ## Installation / Configuration
 
-* [Symfony 3](https://github.com/ekyna/PayumMonetico/blob/master/doc/symfony-3.md)
-* [Symfony 4](https://github.com/ekyna/PayumMonetico/blob/master/doc/symfony-4.md)
+* [Symfony 3](https://github.com/ekyna/PayumMoneticoBundle/blob/master/doc/symfony3.md)
+* [Symfony 4](https://github.com/ekyna/PayumMoneticoBundle/blob/master/doc/symfony4.md)
