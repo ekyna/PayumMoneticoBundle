@@ -67,6 +67,17 @@ class ConvertAction implements ActionInterface, GatewayAwareInterface
             $model['email'] = $sale->getEmail();
         }
 
+        $address = $sale->getInvoiceAddress();
+
+        $model['context'] = [
+            'billing' => [
+                'addressLine1' => $address->getStreet(),
+                'city'         => $address->getCity(),
+                'postalCode'   => $address->getPostalCode(),
+                'country'      => $address->getCountry()->getCode(),
+            ],
+        ];
+
         $request->setResult((array)$model);
     }
 
