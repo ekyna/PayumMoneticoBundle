@@ -70,7 +70,6 @@ class ConfigurationTest extends TestCase
     {
         return [
             [[
-                'bank'    => Api::BANK_CM,
                 'mode'    => Api::MODE_PRODUCTION,
                 'tpe'     => '1324567890',
                 'key'     => '1234567890',
@@ -78,7 +77,6 @@ class ConfigurationTest extends TestCase
                 'debug'   => true,
             ]],
             [[
-                'bank'    => Api::BANK_CIC,
                 'mode'    => Api::MODE_TEST,
                 'tpe'     => 'abc_def_ghi',
                 'key'     => '1234567890',
@@ -86,7 +84,6 @@ class ConfigurationTest extends TestCase
                 'debug'   => false,
             ]],
             [[
-                'bank'    => Api::BANK_OBC,
                 'mode'    => Api::MODE_PRODUCTION,
                 'tpe'     => '1234567890',
                 'key'     => 'abc_def_ghi',
@@ -99,35 +96,24 @@ class ConfigurationTest extends TestCase
     {
         return [
             [[
-                'mode'    => Api::MODE_PRODUCTION,
                 'tpe'     => '1324567890',
                 'key'     => '1234567890',
                 'company' => 'foobar',
                 'debug'   => true,
             ]],
             [[
-                'bank'    => Api::BANK_CM,
-                'tpe'     => '1324567890',
-                'key'     => '1234567890',
-                'company' => 'foobar',
-                'debug'   => true,
-            ]],
-            [[
-                'bank'    => Api::BANK_CM,
                 'mode'    => Api::MODE_PRODUCTION,
                 'key'     => '1234567890',
                 'company' => 'foobar',
                 'debug'   => true,
             ]],
             [[
-                'bank'    => Api::BANK_CM,
                 'mode'    => Api::MODE_PRODUCTION,
                 'tpe'     => '1324567890',
                 'key'     => '1234567890',
                 'debug'   => true,
             ]],
             [[
-                'bank'    => Api::BANK_CM,
                 'mode'    => Api::MODE_PRODUCTION,
                 'tpe'     => '',
                 'key'     => '1234567890',
@@ -143,7 +129,6 @@ class ConfigurationTest extends TestCase
                 'debug'   => true,
             ]],
             [[
-                'bank'    => Api::BANK_CM,
                 'mode'    => 'bar',
                 'tpe'     => '1324567890',
                 'key'     => '1234567890',

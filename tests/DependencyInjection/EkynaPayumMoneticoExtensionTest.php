@@ -16,7 +16,6 @@ class EkynaPayumMoneticoExtensionTest extends TestCase
     public function testSetApiConfigAsContainerParameter()
     {
         $expectedApiConfig = [
-            'bank'    => Api::BANK_CM,
             'mode'    => Api::MODE_PRODUCTION,
             'tpe'     => '1324567890',
             'key'     => '1234567890',
