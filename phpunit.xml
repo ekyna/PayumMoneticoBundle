@@ -25,4 +25,10 @@
             </exclude>
         </whitelist>
     </filter>
+
+    <php>
+        <env name="SHELL_VERBOSITY" value="-1" />
+        <env name="KERNEL_CLASS" value="App\AppKernel" />
+    </php>
+
 </phpunit>

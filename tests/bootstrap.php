@@ -11,3 +11,4 @@ EOM;
 }
 
 $loader->addPsr4('Ekyna\\Bundle\\PayumMoneticoBundle\\', __DIR__);
+$loader->addPsr4('App\\', __DIR__ . '/Functional/App');

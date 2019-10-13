@@ -71,4 +71,3 @@ class RegisterGatewayPass implements CompilerPassInterface
         $container->setDefinition('ekyna_commerce.payum.action.monetico.refund', $definition);
     }
 }
-

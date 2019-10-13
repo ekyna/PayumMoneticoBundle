@@ -18,7 +18,8 @@ return [
 ];
 ```
 
-### Setup the configuration
+### Configure Monetico
+
 Declare the Monetico gateway:
 
 ```yaml
@@ -37,10 +38,13 @@ Setup the API parameters:
 # config/packages/ekyna_payum_monetico.yaml
 ekyna_payum_monetico:
     api:
-        bank : 'CIC'     # enum from Ekyna\Component\Payum\Monetico\Api\Api
         mode : 'TEST'    # enum from Ekyna\Component\Payum\Monetico\Api\Api
         tpe : 'your-tpe' # value from your Monetico account
         key : 'your-key' # value from your Monetico account
         company : 'acme' # value from your Monetico account
         debug : true
 ```
+
+### Next steps
+
+[Implement convert action and notify controller](https://github.com/ekyna/PayumMoneticoBundle/blob/master/doc/develop.md)

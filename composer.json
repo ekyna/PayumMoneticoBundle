@@ -21,13 +21,14 @@
     "license" : "MIT",
     "require" : {
         "php" : "^7.0",
-        "symfony/framework-bundle" : "~3.0|~4.0",
+        "symfony/framework-bundle": "^3.1|^4",
         "payum/payum-bundle": "^2.3",
         "ekyna/payum-monetico": "^1.5"
     },
     "require-dev": {
-        "php-http/guzzle6-adapter": "^1.1",
-        "phpunit/phpunit": "^5.7"
+        "php-http/guzzle6-adapter": "^1",
+        "phpunit/phpunit": "^5.7",
+        "symfony/twig-bundle": "^3.1|^4"
     },
     "autoload" : {
         "psr-4" : {
