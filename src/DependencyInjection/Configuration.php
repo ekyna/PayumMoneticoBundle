@@ -19,8 +19,8 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $root = $treeBuilder->root('ekyna_payum_monetico');
+        $treeBuilder = new TreeBuilder('ekyna_payum_monetico');
+        $root = $treeBuilder->getRootNode();
 
         $this->addApiSection($root);
 
