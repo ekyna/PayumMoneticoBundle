@@ -21,14 +21,12 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         if (version_compare(Kernel::VERSION, '4.0.0') >= 0 ) {
-            $treeBuilder = new TreeBuilder('my_bundle');
+            $treeBuilder = new TreeBuilder('ekyna_payum_monetico');
             $root = $treeBuilder->getRootNode();
         } else {
             $treeBuilder = new TreeBuilder();
-            $root = $treeBuilder->root('my_bundle');
+            $root = $treeBuilder->root('ekyna_payum_monetico');
         }
-        $treeBuilder = new TreeBuilder('ekyna_payum_monetico');
-        $root = $treeBuilder->getRootNode();
 
         $this->addApiSection($root);
 
