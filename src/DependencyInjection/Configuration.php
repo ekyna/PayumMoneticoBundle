@@ -6,6 +6,7 @@ use Ekyna\Component\Payum\Monetico\Api\Api;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
+use Symfony\Component\HttpKernel\Kernel;
 
 /**
  * Class Configuration
@@ -19,8 +20,13 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $root = $treeBuilder->root('ekyna_payum_monetico');
+        if (version_compare(Kernel::VERSION, '4.0.0') >= 0 ) {
+            $treeBuilder = new TreeBuilder('ekyna_payum_monetico');
+            $root = $treeBuilder->getRootNode();
+        } else {
+            $treeBuilder = new TreeBuilder();
+            $root = $treeBuilder->root('ekyna_payum_monetico');
+        }
 
         $this->addApiSection($root);
 
