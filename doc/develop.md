@@ -26,9 +26,15 @@ With monetico you can't configure IPN url for each payments. Monetico technician
 ```php
 namespace App\Controller;
 
+use Payum\Core\Request\GetHumanStatus;
+use Payum\Core\Request\Notify;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
-class MoneticoController
+class MoneticoController extends AbstractController
 {
     /**
      * @Route("/monetico/notify")
@@ -70,5 +76,6 @@ class MoneticoController
         // Return expected response
         return new Response(\Ekyna\Component\Payum\Monetico\Api\Api::NOTIFY_SUCCESS);
     }
+}
 ```
 Register your controller as a service if needed.
